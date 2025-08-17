@@ -1,5 +1,6 @@
 import { Q1,Q2,Q3,Q4,Q5} from './Question.mjs';
 let Question_count = 0  //問題数のカウント
+let button_lock = false
 
 // 他のファイルに関数をexport
 export function startQuestion() {
@@ -43,18 +44,35 @@ export function startQuestion() {
     }
     
     function answer_check(Question,Answer) {
-        // 式表示＋回答欄
-        countdownElement.textContent = (Question)
+       // 一旦空にする
+       countdownElement.innerHTML = "";
+
+        // 数式表示（LaTeX対応ならMathJaxでレンダリング）
+        const questionSpan = document.createElement("span");
+        questionSpan.innerHTML = `$${Question}$`;  // ← LaTeX数式
+        countdownElement.appendChild(questionSpan);
+
+        // 入力欄
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'answer';
         input.placeholder = '答え';
+        input.style.marginLeft = "8px"; // 左に少し余白
         countdownElement.appendChild(input);
 
-        // 答え合わせボタンを作って設置
+        // 答え合わせボタン
         const checkBtn = document.createElement('button');
         checkBtn.textContent = '答え合わせ';
+        checkBtn.style.marginLeft = "8px"; // これも余白
         countdownElement.appendChild(checkBtn);
+
+        // MathJaxで数式レンダリング
+        if (window.MathJax) {
+            MathJax.typesetPromise([countdownElement]);
+        }
+
+
+        button_lock = false;
 
         // 結果表示用の要素を作る（なければ）
         let resultDiv = document.getElementById('result');
@@ -72,6 +90,8 @@ export function startQuestion() {
     function button_system(Answer, checkBtn, input, resultDiv) {
         checkBtn.addEventListener('click', () => {
             //const userAnswer = input.value;
+            if (button_lock === true) return;
+            button_lock = true
 
             // 入力値をスペース区切りで分割
             const userAnswer = input.value.trim().split(/\s+/); // 空白で分割

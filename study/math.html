@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <title>数学勉強用</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+  MathJax = {
+    tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] },
+    svg: { fontCache: "global" }
+  };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
   <div id="score">問題数: 0</div>
   <button id="start-button">問題を開始</button>
   <div id="countdown" style="display: none;">3</div>
+  <div id="question"></div>
 
   <script type="module" src="js/script.mjs"></script>
 </body>

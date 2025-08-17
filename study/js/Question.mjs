@@ -14,7 +14,7 @@ export function Q1() {//1-1
     b = getRandomInt(0, 9)
     Answer = [a*b]
     console.log(`${a}*${b}=${Answer}`);
-    Question = `${a} × ${b} = `;
+    Question = `${a} \\times ${b} = `;//  "\\times" = ×(かけ算)
     return { Question, Answer }
 }
 
@@ -23,7 +23,7 @@ export function Q2() {//1-2
     b = getRandomInt(10, 99)
     Answer = [a*b]
     console.log(`${a}*${b}=${Answer}`);  
-    Question = `${a} × ${b} = `;
+    Question = `${a} \\times ${b} = `;
     return { Question, Answer }
 }
 
@@ -32,7 +32,7 @@ export function Q3() {//1-3
     b = getRandomInt(100, 999)
     Answer = [a*b]
     console.log(`${a}*${b}=${Answer}`);  
-    Question = `${a} × ${b} = `;
+    Question = `${a} \\times ${b} = `;
     return { Question, Answer }
 }
 
