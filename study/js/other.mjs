@@ -1,4 +1,4 @@
-import { Q1,Q2,Q3,Q4,Q5} from './Question.mjs';
+import { Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9} from './Question.mjs';
 let Question_count = 0  //問題数のカウント
 let button_lock = false
 
@@ -21,7 +21,7 @@ export function startQuestion() {
 
         // 問題の抽選
         // 関数を配列に入れる
-        const functionMap = { Q1, Q2, Q3, Q4, Q5 };
+        const functionMap = { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9 };
         const functions = [];
 
         const keys = Object.keys(functionMap);//functionMapの要素数だけ繰り返す
