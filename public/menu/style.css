@@ -1,0 +1,51 @@
+body {
+  max-width: 800px;  /* 最大幅を設定（調整可能） */
+  margin: 0 auto;    /* 左右中央寄せ */
+  padding: 1rem;     /* 内側余白 */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.collapsible {
+  overflow: hidden;
+  transition: max-height 0.75s ease, padding 0.75s ease;
+  max-height: 0;
+  padding: 0 1rem;
+  background-color: #f5f5f5;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+}
+
+/* 開いたときに付けるクラス */
+.collapsible.open {
+  max-height: 300px; /* 必要に応じて調整 */
+  padding: 1rem;
+}
+
+.collapsible label {
+  display: block;
+  margin-bottom: 0.5em; /* 余白（任意） */
+}
+
+/*body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;  /* 横中央 */
+  /*align-items: center;      /* 縦中央 *//*
+}/**/
+
+.wrapper {
+  width: 300px;        /* 任意の幅 */
+  text-align: left;    /* 中身は左寄せ */
+}
+
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
