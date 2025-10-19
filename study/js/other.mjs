@@ -1,9 +1,15 @@
-import { E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16 } from './english/Question.mjs';
+import { E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16, E17, E18 } from './english/Question.mjs';
 import { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9 } from './math/Question.mjs';
+import { Q10 } from './math/Question1.mjs';
 let Question_count = 0  //問題数のカウント
 let correct_answer = 0
 let correct_percent = 0
 let button_lock = false
+
+let timer;          // setInterval用
+let elapsed = 0;    // 経過時間（秒）
+const display = document.getElementById("time");
+const startBtn = document.getElementById("start");
 
 // 他のファイルに関数をexport
 export function startQuestion() {
@@ -37,9 +43,9 @@ export function startQuestion() {
         const subject_Q = params.get("Subject") === "math" ? "Q" : "E"; // 例: mathなら Q1,Q2…、englishなら E_1,E_2…
 
         if (subject === "math") {
-            functionMap = { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9 };
+            functionMap = { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10 };
         } else if (subject === "english") {
-            functionMap = { E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16 };
+            functionMap = { E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16, E17, E18 };
         } else {
             console.error("未知の subject:", subject);
             return; // 処理を中断
@@ -107,6 +113,7 @@ export function startQuestion() {
             countdownElement.parentNode.insertBefore(resultDiv, countdownElement.nextSibling);
         }
 
+        timerstart()
         button_system(Answer, checkBtn, input, resultDiv)
     }
 
@@ -165,3 +172,36 @@ export function startQuestion() {
         });
     }
 }
+
+// 時間を hh:mm:ss に変換
+function formatTime(seconds) {
+    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const s = String(seconds % 60).padStart(2, "0");
+    return `${h}:${m}:${s}`;
+}
+
+// 表示更新
+function updateDisplay() {
+    display.textContent = formatTime(elapsed);
+}
+
+function timerstart() {
+    if (!timer) {
+        timer = setInterval(() => {
+            elapsed++;
+            updateDisplay();
+        }, 1000);
+    }
+}
+// スタート
+startBtn.addEventListener("click", () => {
+    if (!timer) {
+        timerstart()
+    } else {
+        clearInterval(timer); timer = null;
+    }
+});
+
+// 初期表示
+updateDisplay();

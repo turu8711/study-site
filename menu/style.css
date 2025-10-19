@@ -19,12 +19,25 @@ body {
   margin-top: 1rem;
   border: 1px solid #ccc;
 }
-
+.main {
+  overflow: hidden;
+  transition: max-height 1.25s ease, padding 1.25s ease;
+  max-height: 0;
+  padding: 0 1rem;
+  background-color: #f9f9f9;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+}
 /* 開いたときに付けるクラス */
 .collapsible.open {
   max-height: 300px; /* 必要に応じて調整 */
   padding: 1rem;
 }
+.main.open {
+  max-height: 900px; /* 必要に応じて調整 */
+  padding: 1rem;
+}
+
 
 .collapsible label {
   display: block;

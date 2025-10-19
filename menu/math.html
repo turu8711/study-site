@@ -1,89 +1,94 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>数学勉強用</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <h1>目次</h1>
 
   <div class="container">
-    <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ かけ算</h4>
-    <div class="collapsible">
+    <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ 基礎</h4>
+    <div class="collapsible main">
+      <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ かけ算</h4>
+      <div class="collapsible">
 
-      <label>
-      <input type="checkbox" id="Check1">
-        かけ算（１ケタ）
-      </label>
+        <label>
+          <input type="checkbox" id="Check1">
+          かけ算（１ケタ）
+        </label>
 
-      <label>
-      <input type="checkbox" id="Check2">
-        かけ算（２ケタ）
-      </label>
+        <label>
+          <input type="checkbox" id="Check2">
+          かけ算（２ケタ）
+        </label>
 
-      <label>
-      <input type="checkbox" id="Check3">
-        かけ算（３ケタ）
-      </label>
+        <label>
+          <input type="checkbox" id="Check3">
+          かけ算（３ケタ）
+        </label>
 
+      </div>
+
+      <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ 2次方程式</h4>
+      <div class="collapsible">
+
+        <label>
+          <input type="checkbox" id="Check4">
+          因数分解
+        </label>
+
+        <label>
+          <input type="checkbox" id="Check5">
+          展開
+        </label>
+      </div>
+
+      <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ 平方根</h4>
+      <div class="collapsible">
+
+        <label>
+          <input type="checkbox" id="Check6">
+          √を簡単にする
+        </label>
+
+        <label>
+          <input type="checkbox" id="Check7">
+          √を簡単にする(ハード)
+        </label>
+
+        <label>
+          <input type="checkbox" id="Check8">
+          足し算・引き算
+        </label>
+
+        <label>
+          <input type="checkbox" id="Check9">
+          かけ算・わり算
+        </label>
+
+      </div>
     </div>
 
-    <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ 2次方程式</h4>
+    <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ 公式</h4>
     <div class="collapsible">
 
       <label>
-      <input type="checkbox" id="Check4">
-        因数分解
-      </label>
-
-      <label>
-      <input type="checkbox" id="Check5">
+        <input type="checkbox" id="Check10">
         展開
       </label>
-    </div>
-
-    <h4 class="toggle-title" style="cursor:pointer; user-select:none;">▼ 平方根</h4>
-    <div class="collapsible">
-
-      <label>
-      <input type="checkbox" id="Check6">
-        √を簡単にする
-      </label>
-
-      <label>
-      <input type="checkbox" id="Check7">
-        √を簡単にする(ハード)
-      </label>
-
-      <label>
-      <input type="checkbox" id="Check8">
-        足し算・引き算
-      </label>
-
-      <label>
-      <input type="checkbox" id="Check9">
-        かけ算・わり算(作成中)
-      </label>
 
     </div>
-
-    
-
-    <!--作成中
-
-    <h4 class="toggle-text" style="cursor:pointer; user-select:none;">▼ メニュー3を開く／閉じる</h4>
-    <div class="collapsible">
-      <p>メニュー3のコンテンツです。</p>
-    </div>
-
-  -->
   </div>
   <a id="nextPageLink" href="../study/Question.html">問題ページへ</a>
 
 
   <script type="module" src="main.mjs"></script>
 </body>
+
 </html>

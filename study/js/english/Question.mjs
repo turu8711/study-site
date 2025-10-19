@@ -106,6 +106,18 @@ export function E16() {//1-7
     a = getRandomInt(140, 172)
     return make_question();
 }
+
+export function E17() {//1-8
+    type = true
+    a = getRandomInt(174, 189)
+    return make_question();
+}
+
+export function E18() {//1-8
+    type = true
+    a = getRandomInt(190, 190)
+    return make_question();
+}
 //--------------------------------------------------------------------
 function make_question() {
     Question = data[a][0]

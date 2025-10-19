@@ -40,6 +40,24 @@ body {
   font-family: sans-serif;
 }
 
+#stopwatch {
+  position: fixed;
+  top: 130px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-family: sans-serif;
+}
+#stopwatch button {
+  padding: 3px 6px;    /* 内側の余白を小さく */
+  font-size: 12px;     /* 文字を小さく */
+}
+
+
 button {
   padding: 1rem 2rem;
   font-size: 1.5rem;
