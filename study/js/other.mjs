@@ -1,6 +1,7 @@
-import { E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16, E17, E18 } from './english/Question.mjs';
-import { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9 } from './math/Question.mjs';
+import * as E from './english/Question.mjs';
+import * as Q from './math/Question.mjs';
 import { Q10 } from './math/Question1.mjs';
+const math_Q = { ...Q, Q10 };
 let Question_count = 0  //問題数のカウント
 let correct_answer = 0
 let correct_percent = 0
@@ -40,12 +41,12 @@ export function startQuestion() {
         // 問題の抽選
         // 関数を配列に入れる
         let functionMap;
-        const subject_Q = params.get("Subject") === "math" ? "Q" : "E"; // 例: mathなら Q1,Q2…、englishなら E_1,E_2…
+        const subject_Q = params.get("Subject") === "math" ? "Q" : "E"; // 例: mathなら Q1,Q2…、englishなら E1,E2…
 
         if (subject === "math") {
-            functionMap = { Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10 };
+            functionMap = math_Q;
         } else if (subject === "english") {
-            functionMap = { E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16, E17, E18 };
+            functionMap = E;
         } else {
             console.error("未知の subject:", subject);
             return; // 処理を中断

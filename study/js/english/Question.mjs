@@ -115,7 +115,7 @@ export function E17() {//1-8
 
 export function E18() {//1-8
     type = true
-    a = getRandomInt(190, 190)
+    a = getRandomInt(190, 229)
     return make_question();
 }
 //--------------------------------------------------------------------
